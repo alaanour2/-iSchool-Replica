@@ -1,0 +1,355 @@
+/* ده بيخلي كل العناصر تحسب حجمها بالـ border-box عشان مفيش حاجة تكبر فجأة */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 24px;
+    /* بنسمح بالسكرول بدل ما المحتوى يتقطع على الموبايل */
+    overflow-x: hidden;
+}
+
+.login-page-container {
+    display: flex;
+    width: 100%;
+    max-width: 1100px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin: auto;
+}
+
+/* الجزء الشمال (صفحة تسجيل الدخول) */
+.login-section {
+    flex: 1 1 50%;
+    min-width: 0;
+    background-color: white;
+    padding: clamp(24px, 4vw, 50px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 560px;
+}
+
+.login-box {
+    width: 100%;
+    max-width: 380px;
+    text-align: center;
+}
+
+.ischool-logo {
+    width: clamp(90px, 22vw, 130px);
+    height: auto;
+    margin-bottom: 24px;
+}
+
+.login-box img {
+    max-width: 160px;
+    height: auto;
+    display: inline-block;
+}
+
+.login-box h1,\n.login-box h2 {
+    font-size: clamp(1.35rem, 3vw, 1.7em);
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.login-box p {
+    font-size: 0.95em;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Inline form feedback (login + signup) */
+.login-msg {
+    display: none;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    text-align: left;
+    border: 1px solid transparent;
+}
+
+.login-msg.error,
+.login-msg.success {
+    display: block;
+    padding: 10px 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.login-msg.error {
+    color: #b42318;
+    background: #fef3f2;
+    border-color: #fecdca;
+}
+
+.login-msg.success {
+    color: #067647;
+    background: #ecfdf3;
+    border-color: #abefc6;
+}
+
+.login-box p.login-msg {
+    margin-bottom: 20px;
+}
+
+.auth-logo {
+    display: block;
+    max-width: 150px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.signup-link {
+    color: #1a73e8;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.signup-link:hover {
+    text-decoration: underline;
+}
+
+.login-form .input-group {
+    text-align: left;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.login-form label {
+    display: block;
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.login-form input[type="email"],
+.login-form input[type="password"],
+.login-form input[type="text"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    color: #333;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.login-form input:focus {
+    border-color: #1a73e8;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 15px;
+    bottom: 12px;
+    cursor: pointer;
+    color: #999;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+}
+
+.password-toggle:hover {
+    color: #000;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 13px;
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+}
+
+.login-btn:hover {
+    background-color: #155bb5;
+}
+
+.forgot-password-btn {
+    display: block;
+    width: 100%;
+    padding: 13px;
+    background-color: white;
+    color: #1a73e8;
+    border: 1px solid #1a73e8;
+    border-radius: 8px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 15px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.forgot-password-btn:hover {
+    background-color: #1a73e8;
+    color: white;
+}
+
+.login-otp-link {
+    font-size: 0.9em;
+    color: #1a73e8;
+    text-decoration: none;
+    cursor: pointer;
+    margin-top: 25px;
+    display: inline-block;
+}
+
+.login-otp-link:hover {
+    text-decoration: underline;
+}
+
+/* الجزء اليمين (معلومات إضافية) */
+.info-section {
+    flex: 1 1 50%;
+    min-width: 0;
+    background-color: #e0e9fa;
+    padding: clamp(24px, 4vw, 40px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+}
+
+.info-content {
+    text-align: center;
+    max-width: 450px;
+}
+
+.company-logos-grid {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 40px;
+}
+
+.info-section h2,\n.info-section h3 {
+    font-size: clamp(1.15rem, 2.6vw, 1.6em);
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.4;
+    font-weight: 700;
+}
+
+.info-section p {
+    font-size: clamp(0.9rem, 2.2vw, 1em);
+    color: #555;
+    line-height: 1.6;
+}
+
+/* أيقونة الشات اللي بتظهر تحت يمين */
+.chat-icon-fixed {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    background-color: #1a73e8;
+    color: white;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6em;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* ====== Responsive ====== */
+
+/* Tablets */
+@media (max-width: 900px) {
+    .login-page-container {
+        max-width: 640px;
+        flex-direction: column;
+    }
+
+    .login-section {
+        min-height: auto;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    body {
+        padding: 0;
+        align-items: flex-start;
+    }
+
+    .login-page-container {
+        flex-direction: column;
+        width: 100%;
+        max-width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+        min-height: 100vh;
+    }
+
+    .login-section {
+        padding: 32px 20px;
+        min-height: auto;
+        flex: 0 0 auto;
+    }
+
+    .info-section {
+        padding: 32px 20px;
+        min-height: auto;
+        border-radius: 0;
+        flex: 0 0 auto;
+    }
+
+    .company-logos-grid {
+        max-width: 300px;
+        margin-bottom: 24px;
+    }
+
+    .login-box p {
+        margin-bottom: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-section,
+    .info-section {
+        padding: 26px 16px;
+    }
+
+    .login-box h1,\n.login-box h2 {
+        font-size: 1.35em;
+    }
+
+    .login-form input,
+    .login-btn,
+    .forgot-password-btn {
+        padding: 11px;
+    }
+
+    .ischool-logo,
+    .login-box img {
+        max-width: 120px;
+    }
+}

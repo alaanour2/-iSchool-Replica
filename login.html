@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Log in to your iSchool dashboard to follow your child's coding progress.">
+  <title>Login | iSchool</title>
+  <link href="https://cdn.prod.website-files.com/655a78032f46f2e55da300d7/657742cf85af105651d74f51_ischool-favicon.png"
+    rel="shortcut icon" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="./css/login.css">
+</head>
+
+<body>
+
+  <div class="login-page-container">
+
+    <div class="login-section">
+      <div class="login-box">
+        <a href="./index.html"><img src="./img/logo.png" alt="iSchool logo" /></a>
+
+        <h1>Login to your Dashboard</h1>
+
+        <p>Don't have an account? <a href="./signup.html" class="signup-link">Sign Up Here!</a></p>
+
+        <p id="loginMessage" class="login-msg" role="status" aria-live="polite"></p>
+
+        <form class="login-form" id="loginForm">
+          <div class="input-group">
+            <label for="email">Email ID*</label>
+            <input type="email" id="email" name="email" placeholder="Enter Registered Email ID" autocomplete="email"
+              required>
+          </div>
+          <div class="input-group">
+            <label for="password">Password*</label>
+            <input type="password" id="password" name="password" placeholder="Enter Password"
+              autocomplete="current-password" required>
+            <span class="password-toggle" onclick="togglePassword()" role="button" tabindex="0"
+              aria-label="Show or hide password" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();togglePassword();}">
+              <i id="toggleIcon" class="fas fa-eye"></i>
+            </span>
+          </div>
+
+          <button type="submit" id="loginBtn" class="login-btn">Login</button>
+          <a class="forgot-password-btn" href="mailto:Support@ischooltech.com?subject=Password%20reset">Forgot Password?</a>
+        </form>
+      </div>
+    </div>
+
+    <div class="info-section">
+      <div class="info-content">
+        <img src="./img/student-login.png" alt="Students learning with iSchool" class="company-logos-grid">
+
+        <h2>Quality Classes taught by World's Best Instructors from all around the globe</h2>
+        <p>Every iSchool Instructor goes through a rigorous training and is matched based on student’s learning
+          style.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="./js/login.js"></script>
+</body>
+
+</html>

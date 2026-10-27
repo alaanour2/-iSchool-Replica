@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Create your iSchool account and start live 1:1 online coding classes for kids.">
+  <title>Sign Up | iSchool</title>
+  <link href="https://cdn.prod.website-files.com/655a78032f46f2e55da300d7/657742cf85af105651d74f51_ischool-favicon.png"
+    rel="shortcut icon" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="./css/login.css">
+</head>
+
+<body>
+  <div class="bg-gray-100 flex items-center justify-center min-h-screen py-6 px-4 w-full">
+    <div class="bg-white p-6 sm:p-8 rounded-lg shadow-lg max-w-sm w-full">
+      <div class="flex justify-center mb-4">
+        <a href="./index.html">
+          <img src="./img/logo.png" alt="iSchool logo" class="auth-logo">
+        </a>
+      </div>
+      <h1 class="text-2xl font-semibold text-center mb-2">Create a new account</h1>
+      <p class="text-gray-600 text-center mb-6">Enter your details to register.</p>
+
+      <p id="signupMessage" class="login-msg" role="status" aria-live="polite"></p>
+
+      <form id="signupForm" novalidate>
+        <div class="mb-4">
+          <label for="fullName" class="block text-gray-700 text-sm font-semibold mb-2">Full Name *</label>
+          <input type="text" id="fullName" name="fullName" autocomplete="name"
+            class="form-input w-full px-4 py-2 border rounded-lg text-gray-700 focus:ring-blue-500" required
+            placeholder="James Brown">
+        </div>
+        <div class="mb-4">
+          <label for="email" class="block text-gray-700 text-sm font-semibold mb-2">Email Address *</label>
+          <input type="email" id="email" name="email" autocomplete="email"
+            class="form-input w-full px-4 py-2 border rounded-lg text-gray-700 focus:ring-blue-500" required
+            placeholder="hello@example.com">
+        </div>
+        <div class="mb-6">
+          <label for="password" class="block text-gray-700 text-sm font-semibold mb-2">Password *</label>
+          <input type="password" id="password" name="password" autocomplete="new-password"
+            class="form-input w-full px-4 py-2 border rounded-lg text-gray-700 focus:ring-blue-500" required
+            placeholder="••••••••">
+          <p class="text-gray-600 text-xs mt-1">Must contain 1 uppercase letter, 1 number, min. 8 characters.</p>
+        </div>
+        <button type="submit"
+          class="w-full bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">Register</button>
+        <p class="text-gray-600 text-xs text-center mt-4">
+          By clicking Register, you agree to accept iSchool's
+          <a href="./terms.html" target="_blank" rel="noopener" class="text-blue-500 hover:underline">Terms and Conditions</a>.
+        </p>
+        <p class="text-gray-600 text-sm text-center mt-4">
+          Already have an account? <a href="./login.html" class="text-blue-500 hover:underline font-semibold">Log in</a>
+        </p>
+      </form>
+    </div>
+  </div>
+  <script src="./js/signup.js"></script>
+</body>
+
+</html>
